@@ -97,7 +97,7 @@
 (defun calendar-chinese-to-absolute-for-diary (date)
   (pcase-let ((`(,m ,d ,y) date))
     (calendar-chinese-to-absolute
-     (list (floor y 100) (mod y 100) m d))))
+     (list (+ (floor y 60) 45) (mod (- y 3) 60) m d))))
 
 (defun calendar-chinese-mark-date-pattern (month day year &optional color)
   (calendar-mark-1 month day year
